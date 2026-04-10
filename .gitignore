@@ -1,0 +1,41 @@
+# ROS / ROS2
+install/
+log/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+src/*.egg-info
+
+# Colcon
+COLCON_IGNORE
+*.bash
+*.zsh
+*.ps1
+!setup.bash
+!setup.zsh
+!setup.ps1
+!local_setup.bash
+!local_setup.zsh
+!local_setup.ps1

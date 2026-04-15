@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "robot_description=robot_description.robot_description:main"
+            "description_node=robot_description.robot_description:main"
         ],
     },
 )

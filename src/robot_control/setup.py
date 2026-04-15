@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "robot_control=robot_control.robot_control:main"
+            "control_node=robot_control.robot_control:main"
         ],
     },
 )

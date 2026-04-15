@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "robot_bringup=robot_bringup.robot_bringup:main"
+            "bringup_node=robot_bringup.robot_bringup:main"
         ],
     },
 )

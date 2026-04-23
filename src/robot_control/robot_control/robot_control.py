@@ -1,10 +1,19 @@
 #!/usr/bin/env python3
-
 import rclpy
 from rclpy.node import Node
 
-def main():
-    rclpy.init()
-    node=Node("python_node")
-    node.get_logger().info("Testing robot_control.... in ROS2")
+class RobotControlNode(Node):
+    def __init__(self):
+        super().__init__("Robot_Control_Node")
+        self.get_logger().info("Robot control node running...")
+    
+    
+def main(args=None):
+    rclpy.init(args=args)
+    node=RobotControlNode()
+    rclpy.spin(node)
     rclpy.shutdown()
+
+
+if __name__=="__main__":
+    main()

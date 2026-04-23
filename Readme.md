@@ -16,7 +16,7 @@ ROS2 workspace containing robot packages.
 source /opt/ros/humble/setup.bash
 
 # Build workspace
-colcon build
+colcon build --symlink-install # for autobuild or use (colcon build)
 
 # Source overlay
 source install/setup.bash

@@ -29,7 +29,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "control_node=robot_control.robot_control:main"
+            "control_node=robot_control.robot_control:main",
+            "draw_circle=robot_control.publisher:main"
         ],
     },
 )

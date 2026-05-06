@@ -30,7 +30,7 @@ setup(
     entry_points={
         'console_scripts': [
             "control_node=robot_control.robot_control:main",
-            "draw_circle=robot_control.publisher:main"
+            "robot_publish=robot_control.publisher:main"
         ],
     },
 )

@@ -2,24 +2,38 @@
 
 import rclpy 
 from rclpy.node import Node
-from geometry_msgs.msg import Twist 
+from std_msgs.msg import String
 
-class DrawCircleNode(Node):
+
+class PublisherNode(Node):
     def __init__(self):
-        super().__init__("draw_circle")
-        self.cmd_vel_pub_=self.create_publisher(Twist,"/turtle1/cmd_vel",10)
-        self.timer=self.create_timer(0.5,self.send_velocity_command)
-        self.get_logger().info("Draw circle node has been started")
-    
-    def send_velocity_command(self):
-        msg=Twist()
-        msg.linear.x=2.0
-        msg.angular.z=1.0
-        self.cmd_vel_pub_.publish(msg)
+        super().__init__("Publisher_node")
+        
+        self.publisher_=self.create_publisher(String,'topic',10)
+        self.timer=self.create_timer(1.0,self.publish_message)
+        
+        self.count=0
+        
+    def publish_message(self):
+        msg=String()
+        msg.data=f'Testing...: ${self.count}'
+        self.publisher_.publish(msg)
+        
+        self.get_logger().info(f'Publishinng :${msg.data}')
+        self.count+=1
+        
 
 def main(args=None):
     rclpy.init(args=args)
-    node=DrawCircleNode()
+    
+    node=PublisherNode()
     rclpy.spin(node)
     rclpy.shutdown()
+    
+    
+
+if __name__=='__main__':
+   main()
+    
+    
 

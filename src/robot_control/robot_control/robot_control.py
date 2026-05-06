@@ -14,6 +14,7 @@ class RobotControlNode(Node):
 def main(args=None):
     rclpy.init(args=args)
     node=RobotControlNode()
+    # rclpy.spin(node)
     rclpy.spin(node)
     rclpy.shutdown()
 

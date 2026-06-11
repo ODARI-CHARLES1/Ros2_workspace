@@ -16,10 +16,10 @@ class PublisherNode(Node):
         
     def publish_message(self):
         msg=String()
-        msg.data=f'Testing...: ${self.count}'
+        msg.data=f'Testing...: {self.count}'
         self.publisher_.publish(msg)
         
-        self.get_logger().info(f'Publishinng :${msg.data}')
+        self.get_logger().info(f'Publishinng :{msg.data}')
         self.count+=1
         
 
@@ -31,9 +31,6 @@ def main(args=None):
     rclpy.shutdown()
     
     
-
 if __name__=='__main__':
    main()
     
-    
-
